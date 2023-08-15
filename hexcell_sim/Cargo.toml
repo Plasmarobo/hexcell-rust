@@ -1,0 +1,26 @@
+[package]
+authors = ["danger"]
+edition = "2021"
+readme = "README.md"
+name = "hexcell_sim"
+version = "0.1.0"
+
+[dependencies]
+zmq = "0.10.0"
+piston = "0.53.0"
+piston2d-graphics = "0.43.0"
+pistoncore-glutin_window = "0.71.0"
+piston2d-opengl_graphics = "0.82.0"
+embedded-error-chain = "1.0.0"
+hexcell_api = { version = "0.1.0", path = "../hexcell_api" }
+array-init = "2.1.0"
+spmc = "0.3.0"
+bimap = "0.6.3"
+
+[[bin]]
+name = "hexcell_sim"
+test = false
+bench = false
+
+[features]
+std = []
