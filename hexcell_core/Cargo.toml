@@ -1,5 +1,5 @@
 [package]
-name = "hexcell_api"
+name = "hexcell_core"
 version = "0.1.0"
 edition = "2021"
 authors = ["Austen Bartels"]
@@ -7,15 +7,16 @@ authors = ["Austen Bartels"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-defmt = "0.3.5"
 embedded-error-chain = "1.0.0"
 embedded-time = "0.12.1"
 heapless = "0.7.16"
-panic-halt = "0.2.0"
-panic-semihosting = "0.6.0"
+hexcell_api = { version = "0.1.0", path = "../hexcell_api" }
+lazy_static = "1.4.0"
+zerocopy = { version = "0.7.8", features = ["derive"] }
+zerocopy-derive = "0.7.8"
 
 [lib]
-name="hexcell_api"
+name="hexcell_core"
 crate-type=["lib"]
 bench = false
 test = false

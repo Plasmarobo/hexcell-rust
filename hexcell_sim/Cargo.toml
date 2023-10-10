@@ -13,9 +13,13 @@ pistoncore-glutin_window = "0.71.0"
 piston2d-opengl_graphics = "0.82.0"
 embedded-error-chain = "1.0.0"
 hexcell_api = { version = "0.1.0", path = "../hexcell_api" }
+hexcell_core = { version = "0.1.0", path = "../hexcell_core" }
 array-init = "2.1.0"
 spmc = "0.3.0"
 bimap = "0.6.3"
+embedded-time = "0.12.1"
+enum-map = "2.6.3"
+assertions = "0.1.0"
 
 [[bin]]
 name = "hexcell_sim"

@@ -1,8 +1,9 @@
 use embedded_error_chain::prelude::*;
+use embedded_time::duration::*;
 
 use crate::messaging::Message;
 use crate::display::LedBuffer;
-use crate::errors::{NetworkError, PhyError};
+use crate::hexapi_errors::{NetworkError, PhyError};
 
 pub trait HexCell
 {
@@ -20,8 +21,12 @@ pub trait HexCell
   fn set_address(&mut self, address: u32) -> i16;
   // Gets the address of this device
   fn get_address(&self) -> u32;
+  // Gets the unique id of this device
+  fn get_uid(&self) -> u32;
   // Attempts to dequeue a message from RX queue
   fn get_message(&mut self) -> Option<Message>;
   // Attempts to send a message to a specified address
   fn send_message(&mut self, msg:&Message) -> Result<(), Error<NetworkError>>;
+  // Pumps main logic (scheduler while loop, etc)
+  fn update(&mut self, now: Microseconds<u32>);
 }

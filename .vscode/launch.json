@@ -1,0 +1,29 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Hexcell Sim",
+            "type": "lldb",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/hexcell_sim/",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=hexcell_sim",
+                    "--manifest-path=hexcell_sim/Cargo.toml"
+                ],
+                "env": {
+                    "RUSTBACKTRACE": "1"
+                },
+                "problemMatcher": "$rustc",
+                "filter": {
+                    "name": "hexcell_sim",
+                    "kind": "bin"
+                }
+            }
+        }
+    ]
+}

@@ -3,4 +3,6 @@
 pub mod hexcell;
 pub mod display;
 pub mod messaging;
-pub mod errors;
+pub mod hexapi_errors;
+pub mod logging;
+pub mod timer;
